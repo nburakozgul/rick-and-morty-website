@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import TodoList from './components/TodoList';
-import EpisodeDetail from "./components/EpisodeDetail";
+import {
+    ListGroup,Pagination, PaginationItem, PaginationLink
+} from 'reactstrap';
+import ListItem from "./components/list/ListItem";
+import ListComponent from "./components/list/ListComponent";
 
 function App() {
-
-
-  return (
-    <EpisodeDetail/>
-  );
+    return (
+        <ListComponent/>
+     );
 }
 
 export default App;

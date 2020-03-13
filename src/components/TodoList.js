@@ -1,21 +1,18 @@
-import React,{ Component} from "react";
+import React, {Component, useEffect, useState} from "react";
+import { Route,Switch, Link, BrowserRouter as Router } from "react-router-dom";
+import EpisodeDetail from "./EpisodeDetail";
 import SearchBar from "./SearchBar";
-import TextField from "./TextField";
 
 
-class TodoList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            activePage : 0,
-            pages : 0,
-            prev : '',
-            next : '',
-            episodes : []
-        };
+function TodoList()  {
 
-        this.getPage = this.getPage.bind(this);
-    }
+    const [state, setState] = useState({
+        activePage : 0,
+        pages : 0,
+        prev : '',
+        next : '',
+        episodes : []
+    });
 
     // handleAddNote = text => {
     //     let arr = this.state.episodes;
@@ -43,27 +40,28 @@ class TodoList extends Component {
     //     this.setState({episodes: arr});
     // };
 
-    componentDidMount() {
-        fetch('https://rickandmortyapi.com/api/episode/')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({
-                    activePage : 1,
-                    pages : data.info.pages,
-                    next : data.info.next,
-                    prev : data.info.prev,
-                    episodes: data.results});
-                console.log(data);
-            })
-            .catch(console.log)
-    };
+     useEffect(() => {
+         fetch('https://rickandmortyapi.com/api/episode/')
+             .then(res => res.json())
+             .then((data) => {
+                 setState({
+                     activePage: 1,
+                     pages: data.info.pages,
+                     next: data.info.next,
+                     prev: data.info.prev,
+                     episodes: data.results
+                 });
+                 console.log(state);
+             })
+             .catch(console.log)
+    }, []);
 
-    getPage = url => {
+     let getPage = url => {
         if (url.length !== 0)
             fetch(url)
                 .then(res => res.json())
                 .then((data) => {
-                    this.setState({
+                    setState({
                         activePage : 1,
                         pages : data.info.pages,
                         next : data.info.next,
@@ -74,25 +72,34 @@ class TodoList extends Component {
                 .catch(console.log)
     };
 
-    render () {
-        return(
-            <div>
-                <h1 style={{paddingLeft: "38%"}}>Rick And Morty Episodes</h1>
-                {/*<SearchBar onSearch={this.handleOnSearch} onClear={this.handleOnClear}*/}
+    return(
+        <div>
+            <h1 style={{paddingLeft: "38%"}}>Rick And Morty Episodes</h1>
+            {/*<SearchBar onSearch={this.handleOnSearch} onClear={this.handleOnClear}*/}
+            <Router>
                 <ul style={{paddingLeft: "35%"}}>
                     {
-                        this.state.episodes.map((item) => <li key={item.id}>{item.name} - {item.episode}  </li>)
+                        state.episodes.map((item) => <li key={item.id}>
+                            <Link to="/episode">
+                                {item.name} - {item.episode}
+                            </Link>
+                        </li>)
                     }
                 </ul>
-                {/*<TextField onAddNote={this.handleAddNote}/>*/}
-                <div style={{paddingLeft: "40%"}}>
-                    <input type="button" value="Previous" onClick={e => this.getPage(this.state.prev)}/>
-                    <input type="button" value="Next" onClick={e => this.getPage(this.state.next)}/>
-                </div>
-
+                <Switch>
+                    <Route exact path="/" component={SearchBar} />
+                    <Route exact path="/" component={EpisodeDetail} />
+                </Switch>
+            </Router>
+            {/*<TextField onAddNote={this.handleAddNote}/>*/}
+            <div style={{paddingLeft: "40%"}}>
+                <input type="button" value="Previous" onClick={e => getPage(state.prev)}/>
+                <input type="button" value="Next" onClick={e => getPage(state.next)}/>
             </div>
-        );
-    }
+
+        </div>
+    );
+
 
 }
 

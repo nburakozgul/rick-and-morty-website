@@ -32,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_fiat_fiyat_listesi_frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,7 +64,8 @@
       <workItem from="1582786621328" duration="2622000" />
       <workItem from="1582878294417" duration="1731000" />
       <workItem from="1583395286028" duration="24391000" />
-      <workItem from="1583502349771" duration="2548000" />
+      <workItem from="1583502349771" duration="38455000" />
+      <workItem from="1583992878247" duration="22361000" />
     </task>
     <servers />
   </component>
@@ -76,21 +77,26 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="432" y="163" key="#ESLint/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1582699297686" />
-    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1582713494167">
+    <state x="432" y="163" key="#Inspections" timestamp="1584013868027">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1582713494167" />
+    <state x="432" y="163" key="#Inspections/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1584013868027" />
+    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1583823895737">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1583823895737" />
     <state x="341" y="147" key="SettingsEditor" timestamp="1582639267183">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="341" y="147" key="SettingsEditor/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1582639267183" />
-    <state x="496" y="233" key="run.anything.popup" timestamp="1583408875894">
+    <state x="496" y="233" key="run.anything.popup" timestamp="1584088772615">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1583408875894" />
-    <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1583416565428">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1584088772615" />
+    <state x="2183" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1583839933096">
+      <screen x="1680" y="0" width="1680" height="1010" />
     </state>
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1583416565428" />
+    <state x="2183" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1680.1010/1680.0.1680.1010@1680.0.1680.1010" timestamp="1583839933096" />
   </component>
 </project>
