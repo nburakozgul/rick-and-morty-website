@@ -1,22 +1,40 @@
 import React, {useState} from "react";
-import {Button, Card, CardImg, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {
+    Button,
+    ButtonDropdown,
+    Card,
+    CardImg, DropdownItem, DropdownMenu,
+    DropdownToggle,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader
+} from "reactstrap";
+import ListItem from "./ListItem";
 
 const CharacterDetails = props => {
     const {modal,toggle} = props.button;
     const {title,decs, location,episode, imgUrl} = props.params;
-    let image = null;
+
+    const [dropdownOpen, setOpen] = useState(false);
+
+    const buttonToggle = () => setOpen(!dropdownOpen);
+    let locButton;
 
     const getImg = url => {
         if (typeof imgUrl !== "undefined" )
             fetch(url)
                 .then(res => res.blob())
                 .then((data) => {
-                    image = data;
+
                 })
                 .catch(console.log);
     };
 
-    getImg(imgUrl);
+
+
+    if(typeof location !== 'undefined')
+        locButton = <Button color="primary" src={location.url}>Location</Button>
 
     return(
       <div>
@@ -24,11 +42,19 @@ const CharacterDetails = props => {
               <ModalHeader toggle={toggle}>{title}</ModalHeader>
               <ModalBody>
                   <Card>
-                      <CardImg src={image}/>
+                      <CardImg src={imgUrl} loading="lazy"/>
                   </Card>
               </ModalBody>
               <ModalFooter>
-                  <Button color="primary" >Do Something</Button>{' '}
+                  {locButton}
+                  <ButtonDropdown isOpen={dropdownOpen} toggle={buttonToggle} >
+                      <DropdownToggle caret>
+                          Episodes
+                      </DropdownToggle>
+                      <DropdownMenu>
+                          {typeof episode !== "undefined" && episode.map(item => <DropdownItem>{item}</DropdownItem>)}
+                      </DropdownMenu>
+                  </ButtonDropdown>
                   <Button color="secondary" onClick={toggle}>Cancel</Button>
               </ModalFooter>
           </Modal>
