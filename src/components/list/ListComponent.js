@@ -4,7 +4,7 @@ import ListItem from "./ListItem";
 
 const ListComponent = props => {
     const [state,setState] = useState({});
-    let activePage = 1;
+    let buttonText = 'Character Details'; // this is gonna be a prop
 
     useEffect(()=> {
         const url = "https://rickandmortyapi.com/api/character/";
@@ -70,7 +70,7 @@ const ListComponent = props => {
             </Pagination>
             <ListGroup>
                 {state.data.map(item =>
-                    <ListItem item={{title: item.name, desc: item.species + ' - ' + item.status, buttonUrl: item.url , buttonText: 'Character Details'}}/>
+                    <ListItem item={{title: item.name, desc: item.species + ' - ' + item.status, buttonUrl: item.url , buttonText: buttonText}}/>
                 )}
             </ListGroup>
         </div>
