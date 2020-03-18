@@ -3,29 +3,34 @@ import {ListGroup, Pagination, PaginationItem, PaginationLink} from "reactstrap"
 import ListItem from "./ListItem";
 
 const ListComponent = props => {
-    const [state,setState] = useState({});
-    let buttonText = 'Character Details'; // this is gonna be a prop
+    const [state,setState] = useState({activePage:1});
+    const [data,setData] = useState([]);
+    const {buttonText} = props;
+    let  add = 0;
 
-    useEffect(()=> {
-        const url = "https://rickandmortyapi.com/api/character/";
+    const apiCall = () => {
+        const url = "https://rickandmortyapi.com/api/"+props.type;
         fetch(url)
             .then(res => res.json())
-            .then((data) => {
+            .then((res) => {
                 setState({
-                    activePage: 1,
-                    pages : data.info.pages,
-                    prev : data.info.prev,
-                    next : data.info.next,
-                    data:data.results,
+                    activePage : state.activePage + add,
+                    pages : res.info.pages,
+                    prev : res.info.prev,
+                    next : res.info.next
                 });
+                setData(res.results);
                 console.log(state);
             })
             .catch(console.log)
-    },[]);
+    };
+
+    useEffect(()=> {
+        apiCall();
+    },[props.type]);
 
     let getPage = action => {
         let url = '';
-        let  add = 0;
         if (action === 'next') {
             url = state.next;
             add = 1;
@@ -34,21 +39,10 @@ const ListComponent = props => {
             add = -1;
         }
         if (url.length !== 0)
-            fetch(url)
-                .then(res => res.json())
-                .then((data) => {
-                    setState({
-                        activePage : state.activePage + add,
-                        pages : data.info.pages,
-                        next : data.info.next,
-                        prev : data.info.prev,
-                        data: data.results});
-                    console.log(state);
-                })
-                .catch(console.log)
+            apiCall();
     };
 
-    if (typeof state.data === 'undefined')
+    if (typeof data === 'undefined')
         return <div>
             <a>
                 yukleniyor
@@ -69,7 +63,7 @@ const ListComponent = props => {
                 </PaginationItem>
             </Pagination>
             <ListGroup>
-                {state.data.map(item =>
+                {data.map(item =>
                     <ListItem item={{title: item.name, desc: item.species + ' - ' + item.status, buttonUrl: item.url , buttonText: buttonText}}/>
                 )}
             </ListGroup>
