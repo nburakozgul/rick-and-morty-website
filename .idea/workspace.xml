@@ -32,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_fiat_fiyat_listesi_frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web_dpfusion_graphql" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -40,7 +40,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -66,6 +66,13 @@
       <workItem from="1583395286028" duration="24391000" />
       <workItem from="1583502349771" duration="38455000" />
       <workItem from="1583992878247" duration="53647000" />
+      <workItem from="1584559164813" duration="532000" />
+      <workItem from="1584559709897" duration="863000" />
+      <workItem from="1584565998748" duration="651000" />
+      <workItem from="1584685045441" duration="1754000" />
+      <workItem from="1584968245923" duration="1888000" />
+      <workItem from="1585035897362" duration="1225000" />
+      <workItem from="1585572416205" duration="252000" />
     </task>
     <servers />
   </component>
@@ -81,14 +88,20 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="432" y="163" key="#Inspections/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1584013868027" />
-    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1583823895737">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="739" y="271" key="EnvironmentVariablesDialog" timestamp="1584559817734">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="271" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584559817734" />
+    <state x="709" y="268" key="FileChooserDialogImpl" timestamp="1585572666233">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1583823895737" />
-    <state x="341" y="147" key="SettingsEditor" timestamp="1582639267183">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="709" y="268" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585572666233" />
+    <state x="506" y="166" key="SettingsEditor" timestamp="1584559887893">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="341" y="147" key="SettingsEditor/0.0.1680.1010/1680.0.1680.1010@0.0.1680.1010" timestamp="1582639267183" />
+    <state x="506" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584559887893" />
     <state x="496" y="233" key="run.anything.popup" timestamp="1584088772615">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
